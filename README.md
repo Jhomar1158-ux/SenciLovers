@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/flask-2.2.2-brightgreen) ![](https://img.shields.io/badge/tailwindcss-3.2.4-green)
 
 # Welcome to Senci device
+[![Senci-Logo.png](https://i.postimg.cc/Zqmvn8FV/Senci-Logo.png)](https://postimg.cc/TKk3HWsD)
 
 <h2>Fullstack request/response diagram:</h2>
 
