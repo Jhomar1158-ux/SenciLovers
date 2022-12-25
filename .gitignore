@@ -1,6 +1,6 @@
 .DS_Store
 .env
-.__pycache__
+__pycache__
 .flaskenv
 *.pyc
 *.pyo
