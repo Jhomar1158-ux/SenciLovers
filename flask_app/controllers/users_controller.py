@@ -13,3 +13,8 @@ def step2():
 def step3():
 	return render_template("step3.html")
 
+@app.route("/finalizar-steps")
+def finalizarSteps():
+	return redirect("/retirar")
+
+

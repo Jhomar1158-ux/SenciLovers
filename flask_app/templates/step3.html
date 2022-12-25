@@ -6,8 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
+    <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center justify-between p-4">
+        <div class="w-full h-8 flex justify-end">
+            <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+        </div>
+        <div class="w-full h-auto">
+            <div class="w-56 h-auto flex flex-col  mt-5 ml-3">
+                <h1 class="text-senciGreen font-bold w-auto text-xl">PASO 3</h1>
+                <p class="text-sm font-bold">Retira el dinero de la parte inferior
+                </p>
+            </div>
+            <div class="w-full h-20 flex justify-center pb-5">
+                <img src="{{ url_for('static', filename='img/step3.png')}}" alt="Monedas" class="object-cover w-32 h-auto">
+            </div>
+        </div>
+        <div class="w-full flex justify-end">
+            <a href="/finalizar-steps" class="w-24 bg-senciBlue flex gap-2 items-center justify-center rounded-lg p-1">
+                <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
+                <p class="text-white text-sm">Finalizar</p>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
