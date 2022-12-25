@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'ubuntu-light': ['ubuntu-light', ...defaultTheme.fontFamily.sans],
+        'ubuntu-regular': ['ubuntu-regular', ...defaultTheme.fontFamily.sans],
+        'ubuntu-medium': ['ubuntu-medium', ...defaultTheme.fontFamily.sans],
+        'ubuntu-bold': ['ubuntu-bold', ...defaultTheme.fontFamily.sans]
+      },
       width: {
         'pantallaRaspX': '480px',
       },
