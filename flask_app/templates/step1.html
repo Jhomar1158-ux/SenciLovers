@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paso 1</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="w-pantallaRaspX h-pantallaRaspY">
+        <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-28">
+        <div class="w-full h-full">
+            <div class="">
+                <h1 class="text-senciGreen font-bold w-28">PASO 1</h1>
+                <p>Ingresa el monto a retirar <span>(recuerda que debe ser menor a 20 nuevos soles)</span>
+                </p>
+            </div>
+            <img src="{{ url_for('static', filename='img/step1.png')}}" alt="" class="object-cover h-20">
+        </div>
+        <div class="w-full h-full">
+            <a class="bg-senciBlue flex gap-2 items-center justify-center rounded-lg p-2">
+                <i class="fa fa-arrow-circle-right text-white" aria-hidden="true"></i>
+                <p class="text-white">Siguiente</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

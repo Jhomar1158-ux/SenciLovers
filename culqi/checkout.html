@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form>
+            <div>
+                <label>
+                    <span>Teléfono</span>
+                    <input type="text" size="9" data-culqi="yape[phone]" id="yape[phone]">
+                </label>
+                </div>
+                <div>
+                <label>
+                    <span>Código</span>
+                    <input type="text" size="6" data-culqi="yape[code]" id="yape[code]">
+                </label>
+            </div>
+        </form>
+        <button id="btn_pagar">Pagar</button>
+        <script src="https://checkout.culqi.com/js/v4"></script>
+        <script>
+                Culqi.publicKey = 'pk_test_8leouV496jp4e4s0';
+                Culqi.init();
+                Culqi.settings({
+                    currency: 'PEN',
+                    amount: 3500, // Este parámetro es requerido para realizar pagos yape
+                    order: 'Aquí inserta el order id' // Este parámetro es requerido para realizar pagos con pagoEfectivo, billeteras y Cuotéalo
+                });
+                Culqi.options({
+                    paymentMethods: {
+                        tarjeta: true,
+                        bancaMovil: false,
+                        agente: false,
+                        billetera: false,
+                        cuotealo: false,
+                        yape: true
+                    }
+                });
+                Culqi.validationPaymentMethods();
+                console.log(Culqi.paymentOptionsAvailable);
+
+                const btn_pagar = document.getElementById("btn_pagar");
+
+                // Validamos los métodos de pago por el cual podras hacer la compra
+                Culqi.validationPaymentMethods();
+                //Obtenemos los metodos de pagos disponibles
+                var paymentTypeAvailable = Culqi.paymentOptionsAvailable;
+                btn_pagar.addEventListener("click", function (e) {
+                    // Crea el objeto Token con Culqi JS
+                    if (paymentTypeAvailable.token.available) {
+                    paymentTypeAvailable.token.generate();
+                    }
+                    // Crea el objeto Token con Culqi JS
+                    if (paymentTypeAvailable.yape.available) {
+                    paymentTypeAvailable.yape.generate();
+                    }
+                    // Crea cip
+                    if (paymentTypeAvailable.cip.available) {
+                    paymentTypeAvailable.cip.generate();
+                    }
+                    // Crea el link de cuotéalo
+                    if (paymentTypeAvailable.cuotealo.available) {
+                    paymentTypeAvailable.cuotealo.generate();
+                    }
+
+                    e.preventDefault();
+                });
+        </script>
+</body>
+</html>
