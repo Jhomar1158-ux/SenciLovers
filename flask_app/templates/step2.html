@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paso 2</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
+    <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center justify-between p-4">
+        <div class="w-full h-8 flex justify-end">
+            <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+        </div>
+        <div class="w-full flex items-center justify-evenly">
+            <img src="{{ url_for('static', filename='img/step2.png')}}" alt="" class="object-cover h-36">
+            <div class="w-56 h-36 flex flex-col  mt-5 ml-3">
+                <h1 class="text-senciGreen font-bold w-auto text-xl">PASO 2</h1>
+                <p class="text-sm font-bold">Selecciona el método de pago
+                </p>
+                <div class="w-full h-full flex justify-center items-center">
+                    <img src="{{ url_for('static', filename='img/step2PaymentsM.png')}}" alt="" class="object-cover w-24 mb-6">
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-end">
+            <a href="/step-3" class="w-24 bg-senciBlue flex gap-2 items-center justify-center rounded-lg p-1">
+                <i class="fa fa-arrow-circle-right text-white" aria-hidden="true"></i>
+                <p class="text-white text-sm">Siguiente</p>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
