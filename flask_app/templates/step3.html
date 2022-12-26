@@ -10,16 +10,24 @@
 </head>
 <body>
     <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center justify-between p-4">
-        <div class="w-full h-8 flex justify-end">
-            <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+        <div class="w-full h-8 flex justify-between items-center">
+            <a href="/step-2" class="flex items-center justify-center gap-1 mb-2 mr-3">
+                <div class="text-[8px] flex items-center justify-center">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <p class="text-[10px]">Volver</p>
+            </a>
+            <a href="/">
+                <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+            </a>
         </div>
         <div class="w-full h-auto">
-            <div class="w-56 h-auto flex flex-col  mt-5 ml-3">
+            <div class="w-56 h-auto flex flex-col  mt-2 ml-3">
                 <h1 class="text-senciGreen font-bold w-auto text-xl">PASO 3</h1>
                 <p class="text-sm font-bold">Retira el dinero de la parte inferior
                 </p>
             </div>
-            <div class="w-full h-20 flex justify-center pb-5">
+            <div class="w-full h-16 flex justify-end pb-5 pr-16">
                 <img src="{{ url_for('static', filename='img/step3.png')}}" alt="Monedas" class="object-cover w-32 h-auto">
             </div>
         </div>

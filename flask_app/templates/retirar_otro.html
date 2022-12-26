@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otro</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center  p-4">
+        <div class="w-full h-8 flex justify-between items-center">
+            <a href="/retirar" class="flex items-center justify-center gap-1 mb-2 mr-3">
+                <div class="text-[8px] flex items-center justify-center">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <p class="text-[10px]">Volver</p>
+            </a>
+            <a href="/">
+                <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+            </a>
+        </div>
+        <div class="w-full h-full flex flex-col justify-evenly mb-10">
+            <div class="w-full flex justify-center">
+                <p class="w-72 text-xl font-medium text-senciBlue text-center">Por favor digite el monto de la transacción y presione "Listo"</p>
+            </div>
+            <form action="" method="POST" class="flex justify-evenly mt-5 gap-1">
+                <input type="number" step="0.01" name="monto" id="monto" class="border-2 border-senciOrange rounded-lg font-bold  text-sm placeholder-senciOrange placeholder-opacity-50 p-1 w-36" placeholder="2.50 centavos">
+                <input type="submit" class="bg-senciOrange rounded-lg text-white text-ms w-20 font-bold" value="Listo">
+            </form>
+        </div>
+        <div class="w-full flex justify-start">
+            <p class="text-senciOrange text-[10px]">Monto mínimo s/0.50 centavos</p>
+        </div>
+    </div>
+</body>
+</html>
