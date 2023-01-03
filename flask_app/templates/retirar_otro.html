@@ -7,6 +7,7 @@
     <title>Otro</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
 </head>
 <body>
     <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center  p-4">
@@ -21,18 +22,82 @@
                 <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
             </a>
         </div>
-        <div class="w-full h-full flex flex-col justify-evenly mb-10">
+        <div class="w-full h-full flex flex-col justify-evenly mb-10 items-center">
             <div class="w-full flex justify-center">
-                <p class="w-72 text-xl font-medium text-senciBlue text-center">Por favor digite el monto de la transacción y presione "Listo"</p>
+                <p class="w-72 text-xl font-medium text-senciBlue text-center">Por favor digite el monto de la transacción</p>
             </div>
-            <form action="" method="POST" class="flex justify-evenly mt-5 gap-1">
-                <input type="number" step="0.01" name="monto" id="monto" class="border-2 border-senciOrange rounded-lg font-bold  text-sm placeholder-senciOrange placeholder-opacity-50 p-1 w-36" placeholder="2.50 centavos">
-                <input type="submit" class="bg-senciOrange rounded-lg text-white text-ms w-20 font-bold" value="Listo">
-            </form>
+            <button data-modal-target="popup-modal" data-modal-toggle="popup-modal"  class="w-36 h-8 bg-senciOrange flex gap-2 items-center justify-center rounded-lg p-1 mt-5">
+                <i class="fa fa-arrow-circle-right text-white" aria-hidden="true"></i>
+                <p class="text-white text-sm font-bold">Digitar monto</p>
+            </button>
         </div>
+        <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+            <div class="relative w-full h-full max-w-md md:h-auto flex justify-center">
+                <div class="relative bg-senciGrey rounded-lg shadow dark:bg-white-700 w-48 h-52">
+                    <div class="p-6 flex flex-col gap-2 items-center">
+                        <div class="w-36 flex justify-between">
+                            <p class="bg-white p-2 w-24 rounded-md">2.50</p>
+                            <button type="button" class="border-2 border-green-400 rounded-md bg-green-400 flex gap-2 items-center justify-center p-2 w-10">
+                                <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-2">
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">1</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">2</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">3</p>
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">4</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">5</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">6</p>
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">7</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">8</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">9</p>
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">.</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10">0</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-white">
+                                    <p class="text-white p-2 w-10" data-modal-hide="popup-modal">X</p>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+  
         <div class="w-full flex justify-start">
             <p class="text-senciOrange text-[10px]">Monto mínimo s/0.50 centavos</p>
         </div>
     </div>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
 </body>
 </html>

@@ -17,4 +17,6 @@ def step3():
 def finalizarSteps():
 	return redirect("/retirar")
 
-
+@app.route("/calculadora")
+def calculadora():
+	return redirect("/calculadora")
