@@ -32,9 +32,9 @@ function addDecimal() {
     }
 }
 
-function sendDataToFlask(provider,currentNum){
+function sendDataToFlask(provider,monto){
     console.log("send data to python")
-    const dict_values = {provider, currentNum}
+    const dict_values = {provider, monto}
     const s = JSON.stringify(dict_values);
     $.ajax({
         url:"/retiro-monto",

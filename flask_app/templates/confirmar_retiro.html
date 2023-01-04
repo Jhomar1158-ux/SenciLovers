@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otro</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/dist/output.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
+</head>
+<body>
+    <div class="w-pantallaRaspX h-pantallaRaspY flex flex-col items-center  p-4">
+        <div class="w-full h-8 flex justify-between items-center">
+            <a href="/retirar" class="flex items-center justify-center gap-1 mb-2 mr-3">
+                <div class="text-[8px] flex items-center justify-center">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <p class="text-[10px]">Volver</p>
+            </a>
+            <a href="/">
+                <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
+            </a>
+        </div>
+        <div class="w-full h-full mb-5 flex flex-col justify-between items-center mt-3">
+            <div class="w-full flex justify-center">
+                <p class="w-72 text-xl font-medium text-senciBlue text-center">Confirma el monto a retirar</p>
+            </div>
+            <div>
+                <p>
+                    s/<span class="text-4xl">2.50</span> 
+                </p>
+            </div>
+            <div class="w-full flex justify-center items-end">
+                <a href="/finalizar-steps" class="w-28 bg-senciBlue flex gap-2 items-center justify-center rounded-lg p-2">
+                    <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
+                    <p class="text-white text-sm">Confirmar</p>
+                </a>
+            </div>
+        </div>
+        <div class="w-full flex justify-start">
+            <p class="text-senciOrange text-[10px]">Una vez confirmada la compra no hay devoluciones</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/calculadora.js') }}"></script>
+    <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</body>
+</html>
