@@ -7,7 +7,7 @@ def test():
     output = request.get_json()
     result = json.loads(output) #json -> diccionario
     print(result)
-    return result
+    return redirect("/")
 
 @app.route("/retirar")
 def retirar():

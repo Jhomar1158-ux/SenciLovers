@@ -8,7 +8,7 @@ decimal.addEventListener("click", () => {
 });
 const sendData = document.querySelector(".sendData");
 sendData.addEventListener("click", () =>{
-
+    sendDataToFlask(provider, currentNum)
 })
 
 console.log("INGRESÓ")
@@ -22,8 +22,6 @@ function handleNumber(number) {
     if ((currentNum == "" || currentNum.includes(".")) && currentNum.length <3 ) {
       currentNum += number;
       currentDisplayNumber.textContent = currentNum;
-    }else{
-        sendDataToFlask(provider, currentNum)
     }
 }
 
@@ -38,7 +36,6 @@ function sendDataToFlask(provider,currentNum){
     console.log("send data to python")
     const dict_values = {provider, currentNum}
     const s = JSON.stringify(dict_values);
-    window.alert(s)
     $.ajax({
         url:"/retiro-monto",
         type:"POST",
