@@ -31,20 +31,17 @@
                 <p class="text-white text-sm font-bold">Digitar monto</p>
             </button>
         </div>
-        <div id="popup-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+        <div id="popup-modal" tabindex="-1" class="absolute top-2 z-50 hidden p-1 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
             <div class="relative w-full h-full max-w-md md:h-auto flex justify-center">
-                <div class="relative bg-senciGrey rounded-lg shadow dark:bg-white-700 w-48 h-52">
-                    <div class="p-6 flex flex-col gap-2 items-center">
-                        <div class="w-36 flex justify-between">
-                            <p class="bg-white p-2 w-24 rounded-md">2.50</p>
-                            <button type="button" class="border-2 border-green-400 rounded-md bg-green-400 flex gap-2 items-center justify-center p-2 w-10">
-                                <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
-                            </button>
+                <div class=" bg-senciGrey rounded-lg shadow dark:bg-white-700 w-56 h-53px">
+                    <div class="m-3 flex flex-col items-center">
+                        <div class="w-48 flex mb-2 justify-between">
+                            <p class="bg-white p-2 w-full rounded-md">2.50</p>
                         </div>
                         <div class="flex flex-col gap-2">
                             <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">1</p>
+                                    <p class="text-white  w-10">1</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
                                     <p class="text-white p-2 w-10">2</p>
@@ -52,6 +49,12 @@
                                 <button type="button" class="border-2 rounded-md border-white">
                                     <p class="text-white p-2 w-10">3</p>
                                 </button>
+                                <button type="button" class="border-2 rounded-md border-success">
+                                    <p class="text-white p-2 w-10 bg-success">
+                                        <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
+                                    </p>
+                                </button>
+                   
                             </div>
                             <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
@@ -62,6 +65,11 @@
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
                                     <p class="text-white p-2 w-10">6</p>
+                                </button>
+                                <button type="button" class="border-2 rounded-md border-warning">
+                                    <p class="text-white p-2 w-10 bg-warning" data-modal-hide="popup-modal">
+                                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                    </p>
                                 </button>
                             </div>
                             <div class="flex gap-2">
@@ -74,20 +82,11 @@
                                 <button type="button" class="border-2 rounded-md border-white">
                                     <p class="text-white p-2 w-10">9</p>
                                 </button>
-                            </div>
-                            <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
                                     <p class="text-white p-2 w-10">.</p>
                                 </button>
-                                <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">0</p>
-                                </button>
-                                <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10" data-modal-hide="popup-modal">X</p>
-                                </button>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>

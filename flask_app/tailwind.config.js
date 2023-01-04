@@ -17,7 +17,9 @@ module.exports = {
         'senciBlue':"#0B0743",
         'senciGreen':"#89C400",
         'senciOrange':"#E8684B",
-        'senciGrey': "#2E313C"
+        'senciGrey': "#2E313C",
+        'success':"#22bb33",
+        'warning':"#bb2124"
       }
     },
   },
