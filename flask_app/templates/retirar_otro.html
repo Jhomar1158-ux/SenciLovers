@@ -36,35 +36,34 @@
                 <div class=" bg-senciGrey rounded-lg shadow dark:bg-white-700 w-56 h-53px">
                     <div class="m-3 flex flex-col items-center">
                         <div class="w-48 flex mb-2 justify-between">
-                            <p class="bg-white p-2 w-full rounded-md">2.50</p>
+                            <p class="bg-white p-2 w-full rounded-md currentNumber">0</p>
                         </div>
                         <div class="flex flex-col gap-2">
                             <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white  w-10">1</p>
+                                    <p class="text-white  w-10 number">1</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">2</p>
+                                    <p class="text-white p-2 w-10 number">2</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">3</p>
+                                    <p class="text-white p-2 w-10 number">3</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-success">
-                                    <p class="text-white p-2 w-10 bg-success">
+                                    <p class="text-white p-2 w-10 bg-success sendData">
                                         <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
                                     </p>
                                 </button>
-                   
                             </div>
                             <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">4</p>
+                                    <p class="text-white p-2 w-10 number">4</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">5</p>
+                                    <p class="text-white p-2 w-10 number">5</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">6</p>
+                                    <p class="text-white p-2 w-10 number">6</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-warning">
                                     <p class="text-white p-2 w-10 bg-warning" data-modal-hide="popup-modal">
@@ -74,16 +73,16 @@
                             </div>
                             <div class="flex gap-2">
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">7</p>
+                                    <p class="text-white p-2 w-10 number">7</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">8</p>
+                                    <p class="text-white p-2 w-10 number">8</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">9</p>
+                                    <p class="text-white p-2 w-10 number">9</p>
                                 </button>
                                 <button type="button" class="border-2 rounded-md border-white">
-                                    <p class="text-white p-2 w-10">.</p>
+                                    <p class="text-white p-2 w-10 decimal">.</p>
                                 </button>
                             </div>
                         </div>
@@ -96,7 +95,8 @@
             <p class="text-senciOrange text-[10px]">Monto mínimo s/0.50 centavos</p>
         </div>
     </div>
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="{{ url_for('static', filename='js/calculadora.js') }}"></script>
     <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 </body>
 </html>
