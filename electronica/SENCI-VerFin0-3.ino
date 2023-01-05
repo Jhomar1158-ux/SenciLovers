@@ -110,7 +110,7 @@ if (aux == 2){
         retiro[3]--;
         }
     aux = 0;
-    Serial.println("LISTO");
+    //Serial.println("LISTO");
 }
 
  //QUITAR AL FINAL
