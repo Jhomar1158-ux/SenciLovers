@@ -61,7 +61,6 @@ npm run tw-build
 <ul>
     <li>Sebastián Nizama (Electronic & Device communication) - octavio.nizama.z@uni.pe </li>
     <li>Marko Julca (Electronic & 3D Design) - marko.julca.g@uni.pe</li>
-    <li>Nicolás Silva (Electronic) - nicolas.silva.m@uni.pe</li>
     <li>Héctor Llamacponcca (3D Design) - hector.llamacponcca.p@uni.pe</li>
     <li>Jhomar Astuyauri (Product & Web Dev) - jhomar.astuyauri.h@uni.pe</li>
 </ul>
