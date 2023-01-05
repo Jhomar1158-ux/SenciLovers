@@ -4,6 +4,11 @@ import math
 
 class Senci:
     def __init__(self, data):
+        #self.fondo=data["fondo"]
+        #self.coins05=data["coins05"]
+        #self.coins10=data["coins10"]
+        #self.coins20=data["coins20"]
+        #self.coins50=data["coins50"]
         self.monto = data["monto"]
         self.created_at= data["created_at"]
         self.updated_at=data["updated_at"]
