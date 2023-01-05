@@ -3,13 +3,19 @@ from flask_app import app
 import json
 from flask_app.models.senci import Senci
 from flask_app.iot import conversion_data
-
+from flask_app.iot import COM_ESP32
 @app.route('/retiro-monto', methods=['POST'])
 def test():
 	output = request.get_json()
 	result = json.loads(output) #json -> diccionario
 	print(result)
 	#Crear una validación para retiros 0.1 a 0.4 y 0.6 a 0.9 antes de guardar en la db
+	#retiro = result["monto"]
+	#print("Validación")
+	#print(retiro)
+	#print("---")
+	#flag = Senci.validation(retiro) #[True, retiroActualFloat] [False, retiroActualFloat]
+	#if (flag[0]):
 	Senci.save(result)
 
 @app.route("/loader")
@@ -22,9 +28,10 @@ def confirmarRetiro():
 	retiroActual = monto[0]['monto']
 	print("Monto más reciente")
 	print(retiroActual)
-
-	conversion_data.conversion_data(retiroActual)
-
+	#Convierte el RETIRO(FLOAT) a una RETIRO(LISTA)
+	dataESP = conversion_data.conversion_data(retiroActual)
+	#Envía RETIRO(LISTA) al ESP32
+	COM_ESP32.sendDataToESP32(dataESP)
 	return render_template("confirmar_retiro.html", retiroActual=retiroActual)
 
 @app.route("/retirar")
