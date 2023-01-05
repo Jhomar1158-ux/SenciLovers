@@ -42,4 +42,5 @@ function sendDataToFlask(provider,monto){
         contentType: "application/json",
         data: JSON.stringify(s)
     });
+    window.location.href = "http://127.0.0.1:5000/loader";
 }

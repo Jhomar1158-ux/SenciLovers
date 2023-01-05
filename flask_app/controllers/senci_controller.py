@@ -9,14 +9,19 @@ def test():
 	result = json.loads(output) #json -> diccionario
 	print(result)
 	Senci.save(result)
-	return redirect("/")
+
+@app.route("/loader")
+def loader():
+	return render_template("loader.html")
+
 
 @app.route('/confirmar-retiro')
 def confirmarRetiro():
-
-	return render_template("confirmar_retiro.html")
-
-
+	monto = Senci.getMonto()
+	montoActual = monto[0]['monto']
+	print("Monto más reciente")
+	print(montoActual)
+	return render_template("confirmar_retiro.html", montoActual=montoActual)
 
 @app.route("/retirar")
 def retirar():
