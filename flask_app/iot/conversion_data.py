@@ -8,3 +8,17 @@ def conversion_data(retiroActual):
     #2.5 ->[0,0,0,0]
     #2.5 ->[0,0,0,0]
     pass
+
+def greedyMoney(residualpay):
+    money = [0.5,1,2,5]
+    # residualpay = 96
+    selectedMoney = []
+    index = len(money) - 1
+    while (residualpay > 0):
+        pay = residualpay - money[index]
+        if (pay >= 0):
+            residualpay = pay
+            selectedMoney.append(money[index])
+        else:
+            index = index - 1
+    return selectedMoney

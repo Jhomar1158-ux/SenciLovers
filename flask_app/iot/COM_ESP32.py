@@ -2,7 +2,7 @@ import time
 import serial
 
 # Verificar la direccion del puerto de comunicacion
-serialport = "/dev/ttyUSB1"
+serialport = "/dev/ttyUSB0"
 
 # nombre del dispositivo serial : dmesg | grep -v disconnect | grep -Eo "tty(ACM|USB)." | tail -1
 
@@ -37,9 +37,10 @@ def getDatafromESP():
         time.sleep(0.1) # wait for serial to open
         if ser.isOpen():
             try:
-                ser.write("PASAME EL DATO")
+                message = "SEND"
+                ser.write(message.encode())
                 # print(retiroBytes)
-                time.sleep(0.3)
+                time.sleep(1)
                 monto_Senci = ser.readline().decode('latin-1').strip()
                 return monto_Senci
 
@@ -55,6 +56,7 @@ def getDatafromESP():
             finally:
                 ser.close()
 
+'''           
 # Validacion de la cantidad de monedas (por si acaso)
 def validation(retiro_Senci, fondo_Senci = getDatafromESP()):
     val = 0
@@ -63,3 +65,4 @@ def validation(retiro_Senci, fondo_Senci = getDatafromESP()):
     
     if val == 4:  return True
     else: return False
+'''
