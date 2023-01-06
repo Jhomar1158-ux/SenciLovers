@@ -36,7 +36,7 @@ def confirmarRetiro():
 
 @app.route("/confimado")
 def confimado():
-	dataESP = "1,1,1,1"
+	dataESP = [1,1,1,1]
 	#Envía RETIRO(LISTA) al ESP32
 	COM_ESP32.sendDataToESP32(dataESP)
 	return redirect("/")
