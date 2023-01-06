@@ -29,10 +29,18 @@ def confirmarRetiro():
 	print("Monto más reciente")
 	print(retiroActual)
 	#Convierte el RETIRO(FLOAT) a una RETIRO(LISTA)
-	dataESP = conversion_data.conversion_data(retiroActual)
+	#dataESP = conversion_data.conversion_data(retiroActual)
+	
+	return render_template("confirmar_retiro.html", retiroActual=retiroActual)
+
+
+@app.route("/confimado")
+def confimado():
+	dataESP = "1,1,1,1"
 	#Envía RETIRO(LISTA) al ESP32
 	COM_ESP32.sendDataToESP32(dataESP)
-	return render_template("confirmar_retiro.html", retiroActual=retiroActual)
+	return redirect("/")
+
 
 @app.route("/retirar")
 def retirar():
