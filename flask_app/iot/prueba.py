@@ -7,16 +7,20 @@ import conversion_data
 money = [0.5,1,2,5]
 residualpay = 13
 selectedMoney = []
+senciMoney = [0,0,0,0]
 index = len(money) - 1
 while (residualpay > 0):
     pay = residualpay - money[index]
-    print(money[index])
     if (pay >= 0):
         residualpay = pay
         selectedMoney.append(money[index])
     else:
         index = index - 1
 
+for element in selectedMoney:
+    if (element == 0.5):
+        selectedMoney.remove(element)
+    
 print(selectedMoney)
 
 
