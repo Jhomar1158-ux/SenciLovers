@@ -55,14 +55,3 @@ def getDatafromESP():
                 
             finally:
                 ser.close()
-
-'''           
-# Validacion de la cantidad de monedas (por si acaso)
-def validation(retiro_Senci, fondo_Senci = getDatafromESP()):
-    val = 0
-    for index in range(4):
-        if retiro_Senci[index] >= fondo_Senci[index]: val=+1
-    
-    if val == 4:  return True
-    else: return False
-'''
