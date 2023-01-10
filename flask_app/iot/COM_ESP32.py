@@ -32,6 +32,7 @@ def sendDataToESP32(retiro_Senci):
             ser.close()
 
 # Obtiene el valor del Monto de Senci directamente de la ESP32
+# y lo entrega como lista
 def getDatafromESP():
     with serial.Serial(serialport, 9600, timeout=1) as ser:
         time.sleep(0.1) # wait for serial to open
@@ -42,7 +43,9 @@ def getDatafromESP():
                 # print(retiroBytes)
                 time.sleep(1)
                 monto_Senci = ser.readline().decode('latin-1').strip()
-                return monto_Senci
+                lst = monto_Senci.split(',')
+                lista_Senci = [float(i) for i in lst]
+                return lista_Senci
 
             except KeyboardInterrupt:
                 return None

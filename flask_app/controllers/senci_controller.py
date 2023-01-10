@@ -26,21 +26,30 @@ def loader():
 def confirmarRetiro():
 	monto = Senci.getMonto()
 	retiroActual = monto[0]['monto']
+
 	print("Monto más reciente")
 	print(retiroActual)
-	#Convierte el RETIRO(FLOAT) a una RETIRO(LISTA)
-	#dataESP = conversion_data.conversion_data(retiroActual)
-	
-	return render_template("confirmar_retiro.html", retiroActual=retiroActual)
-
+	# Pasarela de pago
+	fondo = COM_ESP32.getDatafromESP()
+	# print(conversion_data.validation(float(retiroActual),fondo))
+	if conversion_data.validation(float(retiroActual),fondo):
+		return render_template("confirmar_retiro.html", retiroActual=retiroActual)
+	return redirect("/")
 
 @app.route("/confimado")
 def confimado():
-	dataESP = [1,1,1,1]
-	#Envía RETIRO(LISTA) al ESP32
+	monto = Senci.getMonto()
+	retiroActual = monto[0]['monto']
+	fondo = COM_ESP32.getDatafromESP()
+	dataESP = conversion_data.convertir_monto(float(retiroActual),fondo)
+	print(dataESP)
+	# no se mueven los servos
+	# ya no se que hacer
+	# tengo sue;o
+	# ayuda
+	#aaaaaaaaaaaaaaaaaaaaaaaaa
 	COM_ESP32.sendDataToESP32(dataESP)
 	return redirect("/")
-
 
 @app.route("/retirar")
 def retirar():
