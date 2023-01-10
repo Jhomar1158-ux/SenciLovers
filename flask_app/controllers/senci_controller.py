@@ -16,7 +16,9 @@ def test():
 	#print("---")
 	#flag = Senci.validation(retiro) #[True, retiroActualFloat] [False, retiroActualFloat]
 	#if (flag[0]):
+	print("Guardar dato en DB")
 	Senci.save(result)
+	print(result)
 
 @app.route("/loader")
 def loader():
@@ -42,12 +44,10 @@ def confimado():
 	retiroActual = monto[0]['monto']
 	fondo = COM_ESP32.getDatafromESP()
 	dataESP = conversion_data.convertir_monto(float(retiroActual),fondo)
+	print(fondo)
 	print(dataESP)
-	# no se mueven los servos
-	# ya no se que hacer
-	# tengo sue;o
-	# ayuda
-	#aaaaaaaaaaaaaaaaaaaaaaaaa
+	print(type(dataESP))
+	# 
 	COM_ESP32.sendDataToESP32(dataESP)
 	return redirect("/")
 

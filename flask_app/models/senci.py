@@ -17,7 +17,7 @@ class Senci:
     def save(cls, data):
         print("Guardando dato")
         print(data)
-        query = "INSERT INTO senci ((monto)) VALUES (%(monto)s);"
+        query = "INSERT INTO senci (monto) VALUES (%(monto)s);"
         nuevoId = connectToMySQL('esquema_senci').query_db(query, data)
         return nuevoId
 
@@ -27,7 +27,7 @@ class Senci:
         print(senci_List)
         val = 0.5*senci_List[0]+1*senci_List[1]+2*senci_List[2]+5*senci_List[3]
         data = {
-            'val': val,
+            'fondo': val,
             'coins05':senci_List[0],
             'coins10':senci_List[1],
             'coins20':senci_List[2],
