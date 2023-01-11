@@ -21,35 +21,10 @@ class Senci:
         nuevoId = connectToMySQL('esquema_senci').query_db(query, data)
         return nuevoId
 
-    @classmethod
-    def save_fondo(cls, senci_List):
-        print("Guardando dato")
-        print(senci_List)
-        val = 0.5*senci_List[0]+1*senci_List[1]+2*senci_List[2]+5*senci_List[3]
-        data = {
-            'fondo': val,
-            'coins05':senci_List[0],
-            'coins10':senci_List[1],
-            'coins20':senci_List[2],
-            'coins50':senci_List[3]
-        }
-        query = "INSERT INTO senci (coins05, coins10, coins20, coins50, fondo) VALUES (%(coins05)s,%(coins10)s,%(coins20)s,%(coins50)s,%(fondo)s);"
-        nuevoId = connectToMySQL('esquema_senci').query_db(query, data)
-        return nuevoId
 
     @classmethod
-    def save_all(cls, val_monto, senci_List):
-        print("Guardando dato")
-        data = {
-            'monto': val_monto,
-            'fondo': val,
-            'coins05':senci_List[0],
-            'coins10':senci_List[1],
-            'coins20':senci_List[2],
-            'coins50':senci_List[3]
-        }
-        print(data)
-        val = 0.5*senci_List[0]+1*senci_List[1]+2*senci_List[2]+5*senci_List[3]
+    def saveAll(cls, data):
+        print("Guardando datos - save_all()")
         query = "INSERT INTO senci (coins05, coins10, coins20, coins50, fondo, monto) VALUES (%(coins05)s,%(coins10)s,%(coins20)s,%(coins50)s,%(fondo)s,%(monto)s);"
         nuevoId = connectToMySQL('esquema_senci').query_db(query, data)
         return nuevoId
