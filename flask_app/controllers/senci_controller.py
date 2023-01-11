@@ -9,6 +9,7 @@ from flask_app.iot import COM_ESP32
 def test():
 	output = request.get_json()
 	valRetiro = json.loads(output) #json -> diccionario
+	valRetiro = valRetiro['monto']
 	print(valRetiro)
 	#Crear una validación para retiros 0.1 a 0.4 y 0.6 a 0.9 antes de guardar en la db
 	#retiro = result["monto"]
@@ -19,9 +20,9 @@ def test():
 	#if (flag[0]):
 
 	fondoList = COM_ESP32.getDatafromESP()
-
+	print(fondoList)
 	valFondo = 0.5*fondoList[0]+1*fondoList[1]+2*fondoList[2]+5*fondoList[3]
-	
+	print(valFondo)
 	data = {
 		'monto': valRetiro,
 		'fondo': valFondo,
@@ -43,8 +44,9 @@ def confirmarRetiro():
 	retiroActual = float(monto[0]['monto'])
 	fondo = COM_ESP32.getDatafromESP()
 	retiro_senci = conversion_data.greedy_monto(retiroActual)
-	
-	print("Monto más reciente")
+	print(retiroActual)
+	print(type(retiroActual))
+	print("RETIRO ACTUAAAAAAAAAL")
 	print(retiroActual)
 	# Pasarela de pago
 
@@ -56,8 +58,10 @@ def confirmarRetiro():
 @app.route("/confimado")
 def confimado():
 	monto = Senci.getMonto()
-	retiroActual = float(monto[0]['monto'])
+	retiroActual = monto[0]['monto']
 	fondo = COM_ESP32.getDatafromESP()
+	print(retiroActual)
+	print(type(retiroActual))
 	retiro_senci = conversion_data.greedy_monto(retiroActual)
 	COM_ESP32.sendDataToESP32(retiro_senci)
 	return redirect("/")

@@ -38,11 +38,11 @@ def validation(retiro,disponible):
             
 
 # Entrega una lista con el minimo numero de monedas
-def greedy_monto(residualpay):
+def greedy_monto(residualpay1):
     money = [0.5,1,2,5]
-    selectedMoney = []
     index = len(money) - 1
     senciList = [0,0,0,0]
+    residualpay=float(residualpay1)
     while (residualpay > 0):
         pay = residualpay - money[index]
         if (pay >= 0):
