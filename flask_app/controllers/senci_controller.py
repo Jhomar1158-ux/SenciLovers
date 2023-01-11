@@ -41,6 +41,7 @@ def loader():
 @app.route('/confirmar-retiro')
 def confirmarRetiro():
 	monto = Senci.getMonto()
+	print(monto)
 	retiroActual = float(monto[0]['monto'])
 	fondo = COM_ESP32.getDatafromESP()
 	retiro_senci = conversion_data.greedy_monto(retiroActual)
