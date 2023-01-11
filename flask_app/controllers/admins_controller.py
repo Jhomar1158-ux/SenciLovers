@@ -8,7 +8,7 @@ from flask_app.iot import COM_ESP32
 
 @app.route("/")
 def index():
-	fondo = COM_ESP32.getDatafromESP()
-	Senci.save_fondo(fondo)
+	# fondo = COM_ESP32.getDatafromESP()
+	# Senci.save_fondo(fondo)
 	# guardar en la base de datos 
 	return render_template("index.html")

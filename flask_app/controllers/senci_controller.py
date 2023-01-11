@@ -16,9 +16,15 @@ def test():
 	#print("---")
 	#flag = Senci.validation(retiro) #[True, retiroActualFloat] [False, retiroActualFloat]
 	#if (flag[0]):
-	print("Guardar dato en DB")
+	'''
+	print("Guardar monto en DB")
 	Senci.save(result)
 	print(result)
+	'''
+	# Guardar valores en DB
+	fondo = COM_ESP32.getDatafromESP()
+	Senci.save_all(result,fondo)
+	print("Guardar todos los valores en DB")
 
 @app.route("/loader")
 def loader():
@@ -28,13 +34,15 @@ def loader():
 def confirmarRetiro():
 	monto = Senci.getMonto()
 	retiroActual = monto[0]['monto']
-
+	fondo = COM_ESP32.getDatafromESP()
+	retiro_senci = conversion_data.greedy_monto(retiroActual)
+	
 	print("Monto más reciente")
 	print(retiroActual)
 	# Pasarela de pago
-	fondo = COM_ESP32.getDatafromESP()
+
 	# print(conversion_data.validation(float(retiroActual),fondo))
-	if conversion_data.validation(float(retiroActual),fondo):
+	if conversion_data.validation(retiro_senci,fondo):
 		return render_template("confirmar_retiro.html", retiroActual=retiroActual)
 	return redirect("/")
 
@@ -43,12 +51,8 @@ def confimado():
 	monto = Senci.getMonto()
 	retiroActual = monto[0]['monto']
 	fondo = COM_ESP32.getDatafromESP()
-	dataESP = conversion_data.convertir_monto(float(retiroActual),fondo)
-	print(fondo)
-	print(dataESP)
-	print(type(dataESP))
-	# 
-	COM_ESP32.sendDataToESP32(dataESP)
+	retiro_senci = conversion_data.greedy_monto(retiroActual)
+	COM_ESP32.sendDataToESP32(retiro_senci)
 	return redirect("/")
 
 @app.route("/retirar")
