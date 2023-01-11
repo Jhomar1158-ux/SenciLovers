@@ -27,10 +27,10 @@ const int pinServo1=21;
 const int pinServo2=19;
 const int pinServo3=18;
 const int pinServo4=5;
-const int sensorPin1 = 23;
-const int sensorPin2 = 22;
-const int sensorPin3 = 4;
-const int sensorPin4 = 15;
+const int sensorPin1 = 15;  //23 0.5
+const int sensorPin2 = 23;  //22 1
+const int sensorPin3 = 4;   //4  2
+const int sensorPin4 = 22;  //15 5
 const int ang_init = 180;
 
 void setup () {
