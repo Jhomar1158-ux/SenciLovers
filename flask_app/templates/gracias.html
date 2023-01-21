@@ -16,36 +16,19 @@
                 <div class="text-[8px] flex items-center justify-center">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </div>
-                <p class="text-[10px]">Volver</p>
+                <p class="text-[10px]">Volver a retirar</p>
             </a>
             <a href="/">
                 <img src="{{ url_for('static', filename='img/SenciLogo2.png')}}" alt="Logo Senci 2" class="object-cover h-12 ">
             </a>
         </div>
         <div class="w-full h-full mb-5 flex flex-col justify-between items-center mt-3">
-            <div>
-                <img src="{{ url_for('static', filename='img/QRyapeJhomarSenci.png')}}" alt="QR yape" class="h-36">
-            </div>
             <div class="w-full flex justify-center">
-                <p class="w-72 text-xl font-medium text-senciBlue text-center">Confirma el monto a retirar</p>
+                <p class="w-72 text-3xl font-medium text-senciBlue text-center">¡Gracias por confiar en Senci, esperamos tengas un gran día!:)</p>
             </div>
-            <div>
-                <p>
-                    s/<span class="text-sm">{{ retiroActual }}</span> 
-                </p>
-            </div>
-            <div class="w-full flex justify-center items-end">
-                <a href="/loader1" class="w-28 bg-senciBlue flex gap-2 items-center justify-center rounded-lg p-2">
-                    <i class="fa fa-check-circle text-white" aria-hidden="true"></i>
-                    <p class="text-white text-sm">Confirmar</p>
-                </a>
-            </div>
-        </div>
-        <div class="w-full flex justify-start">
-            <p class="text-senciOrange text-[10px]">Una vez confirmada la compra no hay devoluciones</p>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='js/calculadora.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gracias.js') }}"></script>
     <script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 </body>

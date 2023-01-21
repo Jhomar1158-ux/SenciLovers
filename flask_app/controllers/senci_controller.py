@@ -66,6 +66,14 @@ def confimado():
 	COM_ESP32.sendDataToESP32(retiro_senci)
 	return redirect("/")
 
+@app.route("/gracias")
+def gracias():
+	return render_template("gracias.html")
+
+@app.route("/loader1")
+def loader():
+	return render_template("loader1.html")
+
 @app.route("/retirar")
 def retirar():
 	return render_template("retirar.html")
