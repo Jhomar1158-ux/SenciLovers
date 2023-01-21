@@ -64,7 +64,7 @@ def confimado():
 	print(type(retiroActual))
 	retiro_senci = conversion_data.greedy_monto(retiroActual)
 	COM_ESP32.sendDataToESP32(retiro_senci)
-	return redirect("/")
+	return redirect("/gracias")
 
 @app.route("/gracias")
 def gracias():
