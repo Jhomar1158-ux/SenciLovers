@@ -71,7 +71,7 @@ def gracias():
 	return render_template("gracias.html")
 
 @app.route("/loader1")
-def loader():
+def loader1():
 	return render_template("loader1.html")
 
 @app.route("/retirar")
