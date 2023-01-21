@@ -50,7 +50,6 @@ def confirmarRetiro():
 	print("RETIRO ACTUAAAAAAAAAL")
 	print(retiroActual)
 	# Pasarela de pago
-
 	# print(conversion_data.validation(float(retiroActual),fondo))
 	if conversion_data.validation(retiro_senci,fondo):
 		return render_template("confirmar_retiro.html", retiroActual=retiroActual)

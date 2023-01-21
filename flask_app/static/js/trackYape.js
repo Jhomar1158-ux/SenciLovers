@@ -10,7 +10,7 @@ function doPost(e){
       var sheet =ss.getSheetByName("Mensajes");
       var jo = {};
       var dataArray = [];
-      var rows = sheet.getRange(2,1,sheet.getLastRow()-1, sheet.getLastColumn()).getValues();  
+      var rows = sheet.getRange(2,1,sheet.getLastRow()-1, sheet.getLastColumn()).getValues();
       for(var i = rows.length-1; i >= 0 ; i--){
         var dataRow = rows[i];
         var record = {};
@@ -19,10 +19,10 @@ function doPost(e){
         record['persona'] = dataRow[2];
         record['monto'] = dataRow[3];
         dataArray.push(record);    
-    }  
+    }
     jo.status = '0';
-    jo.message = 'Exito';  
-    jo.content = dataArray;  
+    jo.message = 'Exito';
+    jo.content = dataArray;
     }
  return ContentService.createTextOutput(JSON.stringify(jo)).setMimeType(ContentService.MimeType.JSON);
   

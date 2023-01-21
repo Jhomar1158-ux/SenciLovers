@@ -22,6 +22,7 @@ def finalizarSteps():
 def calculadora():
 	return redirect("/calculadora")
 
+
 @app.route("/userInfo", methods=['POST'])
 def userInfo():
 	print("INFORMACIÓN EXCEL - PYTHON")
